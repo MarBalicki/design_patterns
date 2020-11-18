@@ -4,23 +4,23 @@ import patterns.a_creational.abstract_factory.Chair;
 import patterns.a_creational.abstract_factory.CoffeeTable;
 import patterns.a_creational.abstract_factory.FurnitureFactory;
 import patterns.a_creational.abstract_factory.Sofa;
-import patterns.a_creational.abstract_factory.product.VintageChair;
-import patterns.a_creational.abstract_factory.product.VintageCoffeeTable;
-import patterns.a_creational.abstract_factory.product.VintageSofa;
+import patterns.a_creational.abstract_factory.product.ArtDecoChair;
+import patterns.a_creational.abstract_factory.product.ArtDecoCoffeeTable;
+import patterns.a_creational.abstract_factory.product.ArtDecoSofa;
 
-public class VintageFactory implements FurnitureFactory {
+public class ArtDecoFurnitureFactory implements FurnitureFactory {
     @Override
     public Chair createChair() {
-        return new VintageChair();
+        return new ArtDecoChair();
     }
 
     @Override
     public Sofa createSofa() {
-        return new VintageSofa();
+        return new ArtDecoSofa();
     }
 
     @Override
     public CoffeeTable createCoffeeTable() {
-        return new VintageCoffeeTable();
+        return new ArtDecoCoffeeTable();
     }
 }

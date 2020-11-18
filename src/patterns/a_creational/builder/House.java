@@ -50,15 +50,18 @@ public class House {
     }
 
     static class HouseBuilder {
+        //basic elements
         private final String walls;
         private final String doors;
         private final String windows;
         private final String roof;
 
+        //not included in builder constructor, so are optional
         private boolean withGarage;
         private boolean withSwimmingPool;
         private boolean withGarden;
 
+        //every house have basic elements
         HouseBuilder(String walls, String doors, String windows, String roof) {
             this.walls = walls;
             this.doors = doors;

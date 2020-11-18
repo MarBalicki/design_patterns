@@ -8,7 +8,7 @@ import patterns.a_creational.abstract_factory.product.ModernChair;
 import patterns.a_creational.abstract_factory.product.ModernCoffeeTable;
 import patterns.a_creational.abstract_factory.product.ModernSofa;
 
-public class ModernFactory implements FurnitureFactory {
+public class ModernFurnitureFactory implements FurnitureFactory {
     @Override
     public Chair createChair() {
         return new ModernChair();

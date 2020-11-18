@@ -4,9 +4,12 @@ public class BuilderMain {
 
     public static void main(String[] args) {
 
+        // używamy buildera żeby dostać nowy obiekt zawsze z dobrym stanem i parametrami
+        //dla obiektów prostych lepsza jest metoda wytwórcza (factory)
+
         House house = new House.HouseBuilder("concret", "wooden", "wooden-3-glass", "ceramic")
                 .withGarage(true)
-                .withSwimmingPool(false)
+//                .withSwimmingPool(false)
                 .withGarden(true)
                 .build();
         System.out.println("--------" + house.getClass().getSimpleName() + "--------");
