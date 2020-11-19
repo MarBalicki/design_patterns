@@ -20,6 +20,8 @@ public class SingletonMain {
 
         System.out.println("----------------------------------------"
                 + "\nIf You see same value it meas that singleton was reused :)"
-                + "\nIf You see different values, the second singleton was created :(");
+                + "\nIf You see different values, the second singleton was created :("
+                + "\nIt's naive implementation, because there is no synchronized singleton class."
+                + "\nWith many threads could not work.");
     }
 }
