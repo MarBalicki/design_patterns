@@ -19,6 +19,6 @@ public class Triangle implements Shape{
 
     @Override
     public boolean isHidden() {
-        return false;
+        return true;
     }
 }

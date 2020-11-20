@@ -23,15 +23,16 @@ public class DecoratorMain {
         );
 
         decoratedTriangle.draw();
+        System.out.println(decoratedTriangle.description());
         System.out.println();
 
         Rectangle rectangle1 = new Rectangle();
         LineStyleDecorator ls = new LineStyleDecorator(rectangle1, LineStyle.SOLID);
         LineColorDecorator lc = new LineColorDecorator(ls, Color.RED);
         Shape decoratedRectangle = new FillColorDecorator(lc, Color.BLACK);
-        Shape rec1 = lc;
-        decoratedRectangle.isHidden();
         decoratedRectangle.draw();
+        System.out.println("Object hidden: " + decoratedRectangle.isHidden());
+        System.out.println(decoratedRectangle.description());
 
     }
 }
