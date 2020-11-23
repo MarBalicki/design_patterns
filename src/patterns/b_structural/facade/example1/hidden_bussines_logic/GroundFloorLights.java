@@ -1,6 +1,6 @@
-package patterns.b_structural.facade;
+package patterns.b_structural.facade.example1.hidden_bussines_logic;
 
-public class GroundFloorLights implements Light {
+class GroundFloorLights implements Light {
 
     @Override
     public void turnOn() {

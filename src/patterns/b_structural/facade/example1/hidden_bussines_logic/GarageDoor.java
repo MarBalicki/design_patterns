@@ -1,6 +1,6 @@
-package patterns.b_structural.facade;
+package patterns.b_structural.facade.example1.hidden_bussines_logic;
 
-public class GarageDoor implements Door {
+class GarageDoor implements Door {
 
     @Override
     public void close() {

@@ -1,14 +1,22 @@
-package patterns.b_structural.facade;
+package patterns.b_structural.facade.example1.hidden_bussines_logic;
 
-public class SystemControl {
+public class SystemControlFacade {
 
-    private final MainDoor mainDoor = new MainDoor();
-    private final Blinds blinds = new Blinds();
-    private final GarageDoor garageDoor = new GarageDoor();
-    private final GroundFloorLights groundFloorLights = new GroundFloorLights();
-    private final FirstFloorLights firstFloorLights = new FirstFloorLights();
+    private final MainDoor mainDoor;
+    private final Blinds blinds;
+    private final GarageDoor garageDoor;
+    private final GroundFloorLights groundFloorLights;
+    private final FirstFloorLights firstFloorLights;
 
-    void lockHome() {
+    public SystemControlFacade() {
+        this.mainDoor = new MainDoor();
+        this.blinds = new Blinds();
+        this.garageDoor = new GarageDoor();
+        this.groundFloorLights = new GroundFloorLights();
+        this.firstFloorLights = new FirstFloorLights();
+    }
+
+    public void lockHome() {
         System.out.println("--------LOCK HOME--------");
         groundFloorLights.turnOff();
         firstFloorLights.turnOff();
@@ -20,7 +28,7 @@ public class SystemControl {
         garageDoor.lock();
     }
 
-    void unlockHome() {
+    public void unlockHome() {
         System.out.println("--------UNLOCK HOME--------");
         mainDoor.unlock();
         mainDoor.open();
@@ -31,13 +39,13 @@ public class SystemControl {
         groundFloorLights.turnOn();
     }
 
-    void lightOn() {
+    public void lightOn() {
         System.out.println("--------LIGHT ON--------");
         groundFloorLights.turnOn();
         firstFloorLights.turnOn();
     }
 
-    void lightOff() {
+    public void lightOff() {
         System.out.println("--------LIGHT OFF--------");
         groundFloorLights.turnOff();
         firstFloorLights.turnOff();

@@ -1,4 +1,4 @@
-package patterns.a_creational.builder;
+package patterns.a_creational.builder.example1;
 
 public class House {
 
@@ -49,7 +49,7 @@ public class House {
         this.withGarden = builder.withGarden;
     }
 
-    static class HouseBuilder {
+    public static class HouseBuilder {
         //basic elements
         private final String walls;
         private final String doors;
@@ -62,24 +62,24 @@ public class House {
         private boolean withGarden;
 
         //every house have basic elements
-        HouseBuilder(String walls, String doors, String windows, String roof) {
+        public HouseBuilder(String walls, String doors, String windows, String roof) {
             this.walls = walls;
             this.doors = doors;
             this.windows = windows;
             this.roof = roof;
         }
 
-        HouseBuilder withGarage(boolean withGarage) {
+        public HouseBuilder withGarage(boolean withGarage) {
             this.withGarage = withGarage;
             return this;
         }
 
-        HouseBuilder withSwimmingPool(boolean withSwimmingPool) {
+        public HouseBuilder withSwimmingPool(boolean withSwimmingPool) {
             this.withSwimmingPool = withSwimmingPool;
             return this;
         }
 
-        HouseBuilder withGarden(boolean withGarden) {
+        public HouseBuilder withGarden(boolean withGarden) {
             this.withGarden = withGarden;
             return this;
         }

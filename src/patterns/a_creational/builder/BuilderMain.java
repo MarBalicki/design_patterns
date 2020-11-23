@@ -1,5 +1,9 @@
 package patterns.a_creational.builder;
 
+import patterns.a_creational.builder.example1.House;
+import patterns.a_creational.builder.example2.Nationality;
+import patterns.a_creational.builder.example2.Person;
+
 public class BuilderMain {
 
     public static void main(String[] args) {
@@ -20,5 +24,13 @@ public class BuilderMain {
         System.out.println("Has garage: " + house.isWithGarage());
         System.out.println("Has swimming pool: " + house.isWithSwimmingPool());
         System.out.println("Has garden: " + house.isWithGarden());
+        System.out.println();
+
+        Person person = new Person.PersonBuilder("Marcin", "Balicki")
+                .age(39)
+                .idNumber(81121217793L)
+                .nationality(Nationality.POLISH)
+                .build();
+        System.out.println(person);
     }
 }
