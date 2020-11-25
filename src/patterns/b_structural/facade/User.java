@@ -24,7 +24,7 @@ public class User {
             Scanner scanner = new Scanner(System.in);
             System.out.println("------------MENU-------------");
             System.out.println("Pick menu: ");
-            waiter.getAvailableMenu();
+            waiter.getAvailableMenus();
             System.out.println("3. Bill please");
             try {
                 int menu = scanner.nextInt();
@@ -41,31 +41,26 @@ public class User {
                 }
                 System.out.println("Order - write number: ");
                 int order = scanner.nextInt();
-                if (billPlease(waiter, scanner, menu, order)) return;
+                if (order > 0 && order < 4) {
+                    System.out.println("Please wait.");
+                    waiter.takeOrder(order, menu);
+                    Thread.sleep(2000);
+                    waiter.getOrder();
+                    Thread.sleep(5000);
+                    System.out.println("Waiter: order/bill");
+                    scanner.nextLine();
+                    String command = scanner.nextLine();
+                    if (waiter.billPlease(command)) {
+                        waiter.bill();
+                        return;
+                    }
+                } else {
+                    System.out.println("There is no such dish in our menu!");
+                }
             } catch (InputMismatchException | InterruptedException e) {
                 System.out.println("Wrong choice! Try again.");
             }
         }
 
-    }
-
-    private static boolean billPlease(Waiter waiter, Scanner scanner, int menu, int order) throws InterruptedException {
-        if (order > 0 && order < 4) {
-            System.out.println("Please wait.");
-            waiter.takeOrder(order, menu);
-            Thread.sleep(2000);
-            System.out.println("Your order: " + waiter.getOrder());
-            Thread.sleep(5000);
-            System.out.println("Waiter: order/bill");
-            scanner.nextLine();
-            String command = scanner.nextLine();
-            if (waiter.billPlease(command)) {
-                waiter.bill();
-                return true;
-            }
-        } else {
-            System.out.println("There is no such dish in our menu!");
-        }
-        return false;
     }
 }

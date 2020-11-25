@@ -51,19 +51,6 @@ public class Person {
         return believeGood;
     }
 
-    @Override
-    public String toString() {
-        return "Person{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", age=" + age +
-                ", idNumber=" + idNumber +
-                ", nationality=" + nationality +
-                ", isSingle=" + isSingle +
-                ", believeGood=" + believeGood +
-                '}';
-    }
-
     public static class PersonBuilder {
 
         //everybody have

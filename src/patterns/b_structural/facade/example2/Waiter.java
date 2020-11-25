@@ -1,7 +1,6 @@
 package patterns.b_structural.facade.example2;
 
 import java.util.Collections;
-import java.util.List;
 
 public class Waiter {
     private final MeatMenu meatMenu;
@@ -24,13 +23,14 @@ public class Waiter {
         System.out.println(Collections.singletonList(vegeMenu.getMenu()));
     }
 
-    public void getAvailableMenu() {
+    public void getAvailableMenus() {
         System.out.println("1. " + meatMenu.getClass().getSimpleName());
         System.out.println("2. " + vegeMenu.getClass().getSimpleName());
     }
 
-    public String getOrder() {
-        return order.getOrderList().get(order.getOrderList().size() - 1);
+    public void getOrder() {
+        System.out.println("Your order: "
+                + order.getOrderList().get(order.getOrderList().size() - 1));
     }
 
     public void bill() {
