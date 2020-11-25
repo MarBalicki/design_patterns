@@ -1,4 +1,4 @@
-package patterns.c_behavioral.strategy;
+package patterns.c_behavioral.strategy.example1;
 
 public class MultiplyOperation implements Strategy {
     @Override

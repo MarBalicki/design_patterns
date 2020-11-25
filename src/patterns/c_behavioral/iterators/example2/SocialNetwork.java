@@ -1,4 +1,4 @@
-package patterns.c_behavioral.iterators;
+package patterns.c_behavioral.iterators.example2;
 
 public interface SocialNetwork {
 

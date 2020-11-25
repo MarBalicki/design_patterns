@@ -1,5 +1,11 @@
 package patterns.c_behavioral.iterators;
 
+import patterns.c_behavioral.iterators.example1.MyIterator;
+import patterns.c_behavioral.iterators.example1.Product;
+import patterns.c_behavioral.iterators.example1.ProductCollection;
+import patterns.c_behavioral.iterators.example2.*;
+
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -21,6 +27,21 @@ public class IteratorDemo {
 
     public static void main(String[] args) {
 
+        System.out.println("--------EXAMPLE 1---------");
+        ProductCollection collection = new ProductCollection();
+        collection.add(new Product("computer1", BigDecimal.valueOf(2500)));
+        collection.add(new Product("computer2", BigDecimal.valueOf(3800)));
+        collection.add(new Product("computer3", BigDecimal.valueOf(4900)));
+        Product product1 = new Product("computer4", BigDecimal.valueOf(50000));
+        collection.add(product1);
+        collection.remove(product1);
+
+        MyIterator<Product> iterator = collection.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+
+        System.out.println("--------EXAMPLE 2---------");
         boolean rightPick = false;
         SocialNetwork network = null;
         do {

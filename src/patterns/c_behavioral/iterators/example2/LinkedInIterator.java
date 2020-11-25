@@ -1,4 +1,4 @@
-package patterns.c_behavioral.iterators;
+package patterns.c_behavioral.iterators.example2;
 
 import java.util.ArrayList;
 import java.util.List;
