@@ -9,12 +9,12 @@ public class Client {
         YoutubeUser user1 = new YoutubeUser("Jaś");
         YoutubeUser user2 = new YoutubeUser("Marcin");
 
-        channel.register(user1);
-        channel.register(user2);
+        channel.subscribe(user1);
+        channel.subscribe(user2);
         channel.publishNewVideo();
         System.out.println("List of subscribers: "
                 + Collections.singletonList(channel.getObservers()));
-        channel.unregister(user2);
+        channel.unsubscribe(user2);
         channel.publishNewVideo();
         System.out.println("List of subscribers: "
                 + Collections.singletonList(channel.getObservers()));

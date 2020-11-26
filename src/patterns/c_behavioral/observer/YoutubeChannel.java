@@ -23,22 +23,22 @@ public class YoutubeChannel implements Subject {
 
     public void publishNewVideo() {
         System.out.println("Channel '" + channelName + "' published new video!");
-        notifySubscribers();
+        notifyAllSubscribers();
     }
 
     @Override
-    public void register(Subscriber subscriber) {
+    public void subscribe(Subscriber subscriber) {
         subscribers.add(subscriber);
         System.out.println(subscriber + " subscribe channel name " + channelName);
     }
 
     @Override
-    public void unregister(Subscriber subscriber) {
+    public void unsubscribe(Subscriber subscriber) {
         subscribers.remove(subscriber);
     }
 
     @Override
-    public void notifySubscribers() {
+    public void notifyAllSubscribers() {
         for (Subscriber subscriber : subscribers) {
             subscriber.update();
         }
