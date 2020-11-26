@@ -2,7 +2,7 @@ package patterns.b_structural.adapter;
 
 public class SquareAdapter extends Circle {
 
-    private Square square;
+    private final Square square;
 
     public SquareAdapter(Square square) {
         this.square = square;

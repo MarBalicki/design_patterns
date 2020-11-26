@@ -5,7 +5,7 @@ import java.util.List;
 
 public class ProductCollection implements MyCollection<Product> {
 
-    List<Product> products = new ArrayList<>();
+    private final List<Product> products = new ArrayList<>();
 
     @Override
     public void add(Product product) {

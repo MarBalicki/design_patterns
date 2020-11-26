@@ -7,7 +7,7 @@ public class User {
     public static void strategy(Context context, Scanner scanner) {
         boolean pickedCorrect = false;
         do {
-            System.out.println("Pick operation number: \n1. add\n2. subtract\n3. multiply\n4. divide");
+            System.out.println("Pick operation number: \n1. Add\n2. Subtract\n3. Multiply\n4. Divide");
             String operationNumber = scanner.nextLine();
             switch (operationNumber) {
                 case "1":
